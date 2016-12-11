@@ -1,0 +1,19 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding save-list-modal">
+    <h2><i class="ion-chevron-left" ng-click="back()"></i>Create List</h2>
+    <form name="saveList">
+      <div class="list">
+        <ion-md-input placeholder="List Title" ng-model="name" name="name" highlight-color="balanced" type="text" ng-required="true"></ion-md-input>
+        <h4>Products:</h4>
+        <ion-item class="item-text-wrap" ng-repeat="(i, product) in sh.newList.products">
+          {{ i + 1 }}. {{ product.title }}
+        </ion-item>
+        <ion-md-input ng-model="sh.productTitle" placeholder="" name="productTitle" highlight-color="balanced" type="text"></ion-md-input>
+        <button class="button button-small ink" ng-click="sh.addProductToList(sh.productTitle)">Add</button>
+      </div>
+      <div class="padding">
+        <button type="submit" class="button button-full button-assertive ink" ng-disabled="saveList.name.$invalid" ng-click="sh.saveList(saveList)">Save</button>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

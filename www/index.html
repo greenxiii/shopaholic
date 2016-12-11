@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
+
+  <link rel="manifest" href="manifest.json">
+
+  <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+  <link href="https://fonts.googleapis.com/css?family=RobotoDraft%3A400%2C500%2C700%2C400italic" rel="stylesheet" type="text/css">
+  <link href="css/ionic.app.css" rel="stylesheet">
+
+  <!-- ionic/angularjs js -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <script src="lib/ionic-material/dist/ionic.material.min.js"></script>
+  <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script src="lib/ion-md-input/js/ion-md-input.min.js"></script>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+  <!-- AngularFire -->
+  <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+  <script>
+    // Initialize the Firebase SDK
+    var config = {
+      apiKey: 'AIzaSyBbq9rsVw6DySgSn_jfLTYlZ5bMKuQmLwg',
+      authDomain: 'shopaholic-97fc6.firebaseapp.com',
+      databaseURL: 'https://shopaholic-97fc6.firebaseio.com/',
+      storageBucket: 'gs://shopaholic-97fc6.appspot.com'
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="lib/ngstorage/ngStorage.js"></script>
+
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
+
+  <!-- your app's js -->
+  <script src="app.js"></script>
+
+  <script src="pages/auth/auth.controller.js"></script>
+  <script src="pages/dashboard/dashboard.controller.js"></script>
+  <script src="pages/chat/chat.controller.js"></script>
+  <script src="pages/chat/chat-detail.controller.js"></script>
+  <script src="pages/account/account.controller.js"></script>
+
+  <script src="services/services.js"></script>
+  <script src="pages/auth/auth.service.js"></script>
+</head>
+
+<body ng-app="starter">
+  <!--
+      The nav bar that will be updated as we navigate between views.
+    -->
+  <ion-nav-bar class="bar-stable">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <!--
+      The views will be rendered in the <ion-nav-view> directive below
+      Templates are in the /templates folder (but you could also
+      have templates inline in this html file if you'd like).
+    -->
+  <ion-nav-view></ion-nav-view>
+</body>
+
+</html>

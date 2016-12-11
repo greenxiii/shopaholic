@@ -1,0 +1,11 @@
+<ion-view view-title="list.title">
+  <ion-content class="padding list-view-modal">
+      <h2><i class="ion-chevron-left" ng-click="back()"></i>{{ sh.currentList.title }}  - {{ sh.currentList.sum }} uah</h2>
+      <div class="list">
+        <ion-item class="item-text-wrap" ng-repeat="(i, product) in sh.currentList.products" ng-click="sh.addPrice(product)">
+            {{ product.title }}
+            <div class="price">{{ product.price || 0 }} uah</div>
+        </ion-item>
+      </div>
+  </ion-content>
+</ion-view>

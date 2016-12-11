@@ -1,0 +1,14 @@
+<ion-view view-title="Your lists">
+  <ion-content class="padding">
+    <div class="list" ng-if="!sh.productLists">
+      <h3>Your lists is empty</h3>
+    </div>
+    <div class="list" ng-if="sh.productLists">
+      <ion-item class="item-text-wrap" ng-repeat="productList in sh.productLists" ng-click="sh.showList(productList)">
+        {{ productList.title }}
+        <p>{{ productList.sum || 0}} uah</p>
+      </ion-item>
+    </div>
+    <button class="button button-small button-border" ng-click="sh.createList()">Add List</button>
+  </ion-content>
+</ion-view>
